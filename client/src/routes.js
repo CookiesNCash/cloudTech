@@ -1,5 +1,5 @@
 import React from "react"
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { Routes as Switch, Route, Navigate } from 'react-router-dom'
 import { AuthPage } from "./pages/AuthPage.js"
 import { CreatePage } from "./pages/CreatePage.js"
 import { DetailPage } from "./pages/DetailPage.js"
@@ -7,7 +7,7 @@ import { LinksPage } from "./pages/LinksPage.js"
 export const useRoutes = (isAuthenticated) => {
     if(isAuthenticated) {
         return (
-           <Routes>
+           <Switch>
             <Route path ="/links" exact>
                 <LinksPage />
             </Route>
@@ -18,15 +18,15 @@ export const useRoutes = (isAuthenticated) => {
                 <DetailPage />
             </Route>
             <Navigate to ='/create' />
-            </Routes>
+            </Switch>
         )
     }
     return (
-        <Routes>
+        <Switch>
             <Route path='/'>
             <AuthPage />
             </Route>
             <Navigate to ="/"/>
-        </Routes>
+        </Switch>
     )
 }
