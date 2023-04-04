@@ -4,7 +4,7 @@ import "materialize-css";
 function App() {
   return (
     <div>
-      <h1>Hello</h1>
+      <h1>Серега Держись</h1>
     </div>
   )
   }
