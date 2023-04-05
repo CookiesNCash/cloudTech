@@ -1,11 +1,11 @@
-import { Router } from "express";
+const {Router} = require('express');
 const router = Router();
-import User from "../models/user.js";
-// import config from "../config/default.js";
+module.exports = router
+const User = require("../models/user.js");
 const config =  require('config');
-import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
-import {check, validationResult} from "express-validator";
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const {check, validationResult} = require("express-validator");
 router.post(
     '/register',
     [
@@ -88,4 +88,4 @@ router.post(
     }
 })
 
-export default router;
+module.export =  router;
